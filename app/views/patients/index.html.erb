@@ -20,6 +20,6 @@
 
   <% else %>
     <h2>Patients Registered Over Days</h2>
-    <%= column_chart @graph_data, id: "patients-chart", height: "400px", width: "600px", title: 'Patients over days', xtitle: "Date", ytitle: "Patients", empty: "No patients"  %>
+    <%= column_chart @graph_data, id: "patients-chart", title: 'Patients over days', xtitle: "Date", ytitle: "Patients", empty: "No patients"  %>
   <%end%>
 </div>
