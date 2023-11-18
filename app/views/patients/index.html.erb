@@ -1,21 +1,30 @@
+<% if flash[:alert] %>
+  <script>
+    setTimeout(function() {
+      const alert = document.querySelector('.alert');
+      alert.remove();
+    }, 3000); // Adjust the time in milliseconds (here, it's 5000 milliseconds or 5 seconds)
+  </script>
+<% end %>
 <div>
   <h1>Patients</h1>
+  <% if @patients.size > 0  %>
+    <% @patients.each do |patient| %>
+      <%= render patient %>
+      <p>
+        <%= link_to "Show", patient_path(patient) %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>There are no patients.</p>
+  <% end %>
   <% if current_user.role == 'Receptionist'%>
     <%= link_to "New patient", new_patient_path %>
     <div id="patients">
-      <% if @patients.size > 0  %>
-        <% @patients.each do |patient| %>
-          <%= render patient %>
-          <p>
-            <%= link_to "Show", patient_path(patient) %>
-          </p>
-        <% end %>
-      <% else %>
-        <p>There are no patients.</p>
-      <% end %>
     </div>
 
   <% else %>
-    <h2>Hello doctor</h2>
+    <h2>Patients Registered Over Days</h2>
+    <%= column_chart @graph_data, id: "patients-chart", height: "400px", width: "600px", title: 'Patients over days', xtitle: "Date", ytitle: "Patients", empty: "No patients"  %>
   <%end%>
 </div>

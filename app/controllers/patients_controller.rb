@@ -1,9 +1,11 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[ show edit update destroy ]
+  before_action :authenticate_receptionist!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /patients or /patients.json
   def index
     @patients = Patient.all
+    @graph_data = Patient.group_by_day(:created_at).count
   end
 
   # GET /patients/1 or /patients/1.json
@@ -66,5 +68,9 @@ class PatientsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def patient_params
       params.require(:patient).permit(:name, :phone, :age, :email, :address,)
+    end
+
+    def authenticate_receptionist!
+      redirect_to patients_path, alert: "You don't have access to this action" unless current_user.role == "Receptionist"
     end
 end
