@@ -2,6 +2,10 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
+# graphs
+gem 'chartkick'
+gem 'groupdate'
+
 
 #figaro for env variables
 gem "figaro"
