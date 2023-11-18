@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@500&display=swap');
+
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
+
+ :root {
+  --font-title: 'Inter', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --color-1: #F2F2F2;
+  --color-2: #FBAE3C;
+  --color-3: #001220;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--color-1);
+}
+
+p, span, a, li, input, textarea, button {
+  font-family: var(--font-body);
+  color: var(--color-1);
+ }
+
+ .main-div {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 15vh;
+  background-image: url('blob-scene-haikei.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+ }
+
+ .home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 25vh;
+  color: var(--color-1);
+ }
+
+ .nav {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  background-color: var(--color-3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border-bottom: 1px solid var(--color-2); */
+  box-shadow: 1px 0px 5px var(--color-2);
+ }

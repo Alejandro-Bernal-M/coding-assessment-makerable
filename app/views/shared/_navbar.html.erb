@@ -1,4 +1,9 @@
-<nav>
+<nav class="nav">
+  <div class="nav__logo">
+    <span>
+      Patients manager
+    </span>
+  </div>
   <ul>
     <li><%= link_to "Home", root_path %></li>
     <% if current_user%>
@@ -9,4 +14,4 @@
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
     <% end %>
   </ul>
-</ nav>
+</nav>
