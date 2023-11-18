@@ -49,10 +49,11 @@ p, span, a, li, input, textarea, button {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 15vh;
+  padding: 20vh 0;
   background-image: url('blob-scene-haikei.svg');
   background-repeat: no-repeat;
   background-size: 100%;
+  gap: 1rem;
  }
 
  .home-title {
@@ -111,4 +112,47 @@ p, span, a, li, input, textarea, button {
   cursor: pointer;
   background-color: var(--color-2);
   color: var(--color-1);
+}
+
+.notice,
+.alert {
+  position: absolute;
+  top: 15vh;
+  left: 43%;
+  font-size: 20px;
+}
+
+.new_user {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label,
+.field em {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-2)
+}
+
+.field input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--color-1);
+  color: var(--color-3);
 }
