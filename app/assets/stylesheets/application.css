@@ -51,8 +51,8 @@ p, span, a, li, input, textarea, button {
   align-items: center;
   padding: 20vh 0;
   background-image: url('blob-scene-haikei.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-repeat: repeat;
+  background-size: cover;
   gap: 1rem;
  }
 
@@ -111,7 +111,8 @@ p, span, a, li, input, textarea, button {
   border: none;
   cursor: pointer;
   background-color: var(--color-2);
-  color: var(--color-1);
+  color: var(--color-3);
+  text-decoration: none;
 }
 
 .notice,
@@ -122,7 +123,8 @@ p, span, a, li, input, textarea, button {
   font-size: 20px;
 }
 
-.new_user {
+.new_user,
+.patient-form {
   width: 80%;
   display: flex;
   justify-content: center;
@@ -155,4 +157,56 @@ p, span, a, li, input, textarea, button {
   border: none;
   background-color: var(--color-1);
   color: var(--color-3);
+}
+
+.patients-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.patients-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.patient-info {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--color-2);
+  box-shadow: 1px 0px 5px var(--color-2);
+}
+
+.patient-info p {
+  color: var(--color-3);
+}
+
+.show-patient-btns {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#patients-chart {
+  border-radius: 10px;
+  background-color: var(--color-2);
+  box-shadow: 1px 0px 5px var(--color-2);
 }

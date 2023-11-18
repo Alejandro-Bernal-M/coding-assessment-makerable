@@ -1,10 +1,10 @@
 
 <%= render @patient %>
 
-<div>
+<div class="show-patient-btns">
   <% if current_user.role == 'Receptionist' %>
-    <%= link_to "Edit this patient", edit_patient_path(@patient) %> 
-    <%= button_to "Destroy this patient", @patient, method: :delete %>
+    <%= button_to "Destroy this patient", @patient, method: :delete, class:'btn' %>
+    <%= link_to "Edit this patient", edit_patient_path(@patient), class:'btn' %> 
   <% end %>
-    <%= link_to "Back to patients", patients_path %>
+    <%= link_to "Back to patients", patients_path, class:'btn' %>
 </div>

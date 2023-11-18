@@ -1,18 +1,20 @@
 
-<div>
+<div class="patients-page">
   <h1>Patients</h1>
   <% if @patients.size > 0  %>
-    <% @patients.each do |patient| %>
-      <%= render patient %>
-      <p>
-        <%= link_to "Show", patient_path(patient) %>
-      </p>
-    <% end %>
+    <div class="patients-holder">
+      <% @patients.each do |patient| %>
+        <%= render patient %>
+        <p>
+          <%= link_to "Show", patient_path(patient) %>
+        </p>
+      <% end %>
+    </div>
   <% else %>
     <p>There are no patients.</p>
   <% end %>
   <% if current_user.role == 'Receptionist'%>
-    <%= link_to "New patient", new_patient_path %>
+    <%= link_to "New patient", new_patient_path, class: "btn" %>
     <div id="patients">
     </div>
 
