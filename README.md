@@ -128,7 +128,7 @@ To start the server, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Task counter on the columns]**
+- [ ] **[appoiments]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
