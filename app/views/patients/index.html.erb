@@ -1,0 +1,21 @@
+<div>
+  <h1>Patients</h1>
+  <% if current_user.role == 'Receptionist'%>
+    <%= link_to "New patient", new_patient_path %>
+    <div id="patients">
+      <% if @patients.size > 0  %>
+        <% @patients.each do |patient| %>
+          <%= render patient %>
+          <p>
+            <%= link_to "Show", patient_path(patient) %>
+          </p>
+        <% end %>
+      <% else %>
+        <p>There are no patients.</p>
+      <% end %>
+    </div>
+
+  <% else %>
+    <h2>Hello doctor</h2>
+  <%end%>
+</div>
