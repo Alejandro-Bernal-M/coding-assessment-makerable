@@ -12,6 +12,24 @@
 
   <body>
     <%= render "shared/navbar" %>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+           setInterval(function() {
+            const alertElement = document.querySelector('.alert');
+            const noticeElement = document.querySelector('.notice');
+              if (alertElement) {
+                setTimeout(() => {
+                  alertElement.style.display = 'none';
+                }, 3000);
+              }
+              if (noticeElement) {
+                setTimeout(() => {
+                  noticeElement.style.display = 'none';
+                }, 3000);
+              }
+            }, 1000); // Adjust the time in milliseconds (here, it's 3000 milliseconds or 3 seconds)
+          });
+      </script>
     <div class="main-div">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>

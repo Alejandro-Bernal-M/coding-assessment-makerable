@@ -1,11 +1,4 @@
-<% if flash[:alert] %>
-  <script>
-    setTimeout(function() {
-      const alert = document.querySelector('.alert');
-      alert.remove();
-    }, 3000); // Adjust the time in milliseconds (here, it's 5000 milliseconds or 5 seconds)
-  </script>
-<% end %>
+
 <div>
   <h1>Patients</h1>
   <% if @patients.size > 0  %>
