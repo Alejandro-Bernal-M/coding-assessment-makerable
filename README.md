@@ -98,8 +98,10 @@ The enviroment variables are managed with the figaro gem, you need to create a f
   /config/application.yml
 ```
 inside that file, you need to create this variables:
+```sh
  postgre_username: "your user"
  postgre_password: "your password"
+```
 
 then run 
 ```sh
